@@ -104,11 +104,82 @@ void printTree(BinaryTreeNode<int>* root){
     printTree(root->leftNode);
     printTree(root->rightNode);
 }
+int numNodes(BinaryTreeNode<int>* root){
+    if(root==NULL){
+        return 0;
+    }
+    return 1 + numNodes(root->leftNode) + numNodes(root->rightNode);
+}
+BinaryTreeNode<int>* searchNode(BinaryTreeNode<int>* root,int data){
+
+    if(root==NULL){
+        return NULL;
+    }
+    if(root->data==data){
+        return root;
+    }
+    BinaryTreeNode<int>* temp=searchNode(root->leftNode,data);
+    if(temp!=NULL){
+        return temp;
+    }
+    temp=searchNode(root->rightNode,data);
+    if(temp!=NULL){
+        return temp;
+    }
+    return temp;
+    
+
+}
+int heightOfTree(BinaryTreeNode<int>* root){
+    if(root==NULL){
+        return 0;
+    }
+    if(root->leftNode==NULL){
+        return 1;
+    }
+    if(root->rightNode==NULL){
+        return 1;
+    }
+    
+    int h1=heightOfTree(root->leftNode);
+    int h2= heightOfTree(root->rightNode);
+    if(h1>h2){
+        return 1+h1;
+    }else{
+        return 1+h2;
+    }
+    
+
+}
+// Tree
+// 1 2 3 4 5 6 7 -1 -1 -1 -1 8 9 -1 -1 -1 -1 -1 -1
+/* 
+                            1
+                        /       \
+                        2        3
+                    /       \   /   \
+                    4       5   6   7
+                               /  \
+                               8    9
+
+*/
+
 int main()
 {
     BinaryTreeNode<int>*root=takeInputlevelWise();
     printTreeLevelWise(root);
+    // cout<<"Number of nodes"<<endl;
+    // cout<<numNodes(root)<<endl;
+    // cout<<"Enter the data who want to search"<<endl;
+    // int data;
+    // cin>>data;
+    // if(searchNode(root,data)!=NULL){
+    //     cout<<"True"<<endl;
+    // }else{
+    //     cout<<"False"<<endl;
+    // }
     // deleting tree
+    cout<<heightOfTree(root)<<endl;
     delete root;
 return 0;
 }
