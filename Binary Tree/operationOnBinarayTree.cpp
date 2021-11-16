@@ -149,7 +149,16 @@ int heightOfTree(BinaryTreeNode<int>* root){
         return 1+h2;
     }
     
-
+}
+void mirroTree(BinaryTreeNode<int>* root){
+    if(root==NULL){
+        return ;
+    }
+    BinaryTreeNode<int>* temp=root->leftNode;
+    root->leftNode=root->rightNode;
+    root->rightNode=temp;
+    mirroTree(root->leftNode);
+    mirroTree(root->rightNode);
 }
 // Tree
 // 1 2 3 4 5 6 7 -1 -1 -1 -1 8 9 -1 -1 -1 -1 -1 -1
@@ -179,7 +188,9 @@ int main()
     //     cout<<"False"<<endl;
     // }
     // deleting tree
-    cout<<heightOfTree(root)<<endl;
+    // cout<<heightOfTree(root)<<endl;
+    mirroTree(root);
+    printTreeLevelWise(root);
     delete root;
 return 0;
 }
