@@ -15,6 +15,8 @@ void antiPali()
     }
     sort(s.begin(), s.end());
     int a[27] = {0};
+    
+    
     fr(i, n) a[s[i] - 'a']++;
 
     fr(i, 27)
