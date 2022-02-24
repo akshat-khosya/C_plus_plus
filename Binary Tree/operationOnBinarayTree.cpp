@@ -55,7 +55,7 @@ BinaryTreeNode<int>* takeInput(){
    cout<<"Enter data"<<endl;
    cin>>rootData;
    if(rootData== -1){
-       return NULL;
+       ;
    }
    BinaryTreeNode<int>* root= new BinaryTreeNode<int>(rootData);
    BinaryTreeNode<int>* leftCild= takeInput();
