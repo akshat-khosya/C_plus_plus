@@ -14,5 +14,5 @@ int main()
     int n;
     cin>>n;
     cout<<nthFibonacciNumber(n)<<endl;
-return 0;
+;
 }
