@@ -1,0 +1,68 @@
+https://leetcode.com/problems/add-two-numbers/
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        ListNode*head=NULL;
+        ListNode*tail=NULL;
+        ListNode*temp1=l1;
+        ListNode*temp2=l2;
+        
+        int carray=0;
+        while(temp1!=NULL || temp2!=NULL || carray==1){
+            int x=temp1==NULL?0:temp1->val;
+            int y=temp2==NULL?0:temp2->val;
+            int sum=x+y+carray;
+            if(sum>=10){
+                carray=1;
+                sum=sum-10;
+                
+                if(head==NULL){
+                    ListNode*newNode=new ListNode(sum);
+                head=newNode;
+                tail=head; 
+                }else{
+                    
+                    ListNode*newNode=new ListNode(sum);
+                    
+                    tail->next=newNode;
+                    tail=tail->next;
+                    
+                }
+              
+                
+            }else{
+                carray=0;
+                
+                if(head==NULL){
+                    ListNode*newNode=new ListNode(sum);
+                head=newNode;
+                tail=head; 
+                }else{
+                    ListNode*newNode=new ListNode(sum);
+                    tail->next=newNode;
+                    tail=tail->next;
+                }
+                
+                 
+            }
+            if(temp1!=NULL)temp1=temp1->next;
+            if(temp2!=NULL)temp2=temp2->next;
+            
+            
+        }
+        return head;
+    }
+    
+   
+};
