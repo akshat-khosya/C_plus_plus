@@ -1,0 +1,1 @@
+{"name":"Local: Adminshop","url":"/home/akshi/Documents/CPP/C_plus_plus/codechef/Adminshop.cpp","tests":[{"id":1650468649137,"input":"3\n2 3\n3 3\n4 2\n1 2 3 4\n1 6\n2\n","output":"2\n4\n3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/akshi/Documents/CPP/C_plus_plus/codechef/Adminshop.cpp","group":"local","local":true}
