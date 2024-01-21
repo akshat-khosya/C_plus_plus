@@ -87,5 +87,9 @@
         "valarray": "cpp",
         "variant": "cpp"
     },
-    "code-runner.cwd": "./out"
+    "code-runner.cwd": "./out",
+    "cSpell.words": [
+        "Akshat",
+        "Khosya"
+    ]
 }
