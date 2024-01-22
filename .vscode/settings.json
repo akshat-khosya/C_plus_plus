@@ -91,5 +91,6 @@
     "cSpell.words": [
         "Akshat",
         "Khosya"
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "disabled"
 }
